@@ -21,7 +21,7 @@ func main() {
 	}
 
 	// Create the backup file name based on the current date
-	dateString := time.Now().Format("20060102-150405")
+	dateString := time.Now().Format("2006-01-02_15-04-05")
 	backupFile := filepath.Join(backupFolder, fmt.Sprintf("backup_%s.zip", dateString))
 
 	// Create the backup using archiver
@@ -33,7 +33,7 @@ func main() {
 
 	fmt.Printf("Backup created: %s\n", backupFile)
 
-	// Manage backups: Keep at most 2 backups
+	// Manage backups: Keep at most 4 backups
 	files, err := os.ReadDir(backupFolder)
 	if err != nil {
 		fmt.Println("Error reading backup directory:", err)
@@ -56,7 +56,7 @@ func main() {
 		return infoI.ModTime().Before(infoJ.ModTime())
 	})
 
-	if len(backupFiles) > 2 {
+	if len(backupFiles) > 4 {
 		oldestBackup := filepath.Join(backupFolder, backupFiles[0])
 		if err := os.Remove(oldestBackup); err == nil {
 			fmt.Printf("Deleted oldest backup: %s\n", oldestBackup)
