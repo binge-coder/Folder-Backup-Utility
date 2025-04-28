@@ -35,8 +35,8 @@ go mod download
 Modify these variables in [`backup-script.go`](backup-script.go) to match your requirements:
 
 ```go
-sourceFolder := `D:\path\to\folder\to\backup` // Any folder you want to back up
-backupFolder := `D:\path\to\backup\storage`   // Where backups will be stored
+sourceFolder := `full\path\to\folder\needing\backup` // Any folder you want to back up
+backupFolder := `full\path\to\backup\storage`   // Where backups will be stored
 ```
 
 By default, the script keeps the 4 most recent backups. To change this, modify the condition:
