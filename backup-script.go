@@ -6,13 +6,12 @@ import (
 	"path/filepath"
 	"sort"
 	"time"
-
 	"github.com/mholt/archiver/v3"
 )
 
 func main() {
-	sourceFolder := `D:\syncthing\obsidian main vault` // Folder you want to back up
-	backupFolder := `D:\Backups\Obsidian backups` // Folder where backups will be stored
+	sourceFolder := `C:\KK_Data\syncthing\obsidian main vault` // Folder you want to back up
+	backupFolder := `C:\KK_Data\Meta\obsidian backups` // Folder where backups will be stored
 
 	// Ensure the backup folder exists
 	if err := os.MkdirAll(backupFolder, os.ModePerm); err != nil {
